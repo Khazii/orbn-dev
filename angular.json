@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "orbn-dev:build:production"
+              "buildTarget": "orbn-dev:build:production"
             },
             "development": {
-              "browserTarget": "orbn-dev:build:development"
+              "buildTarget": "orbn-dev:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "orbn-dev:build"
+            "buildTarget": "orbn-dev:build"
           }
         },
         "test": {
