@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "orbn-dev": {
+      "hosting": {
+        "orbn-dev": [
+          "orbn-dev"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "orbn-dev"
+  }
+}

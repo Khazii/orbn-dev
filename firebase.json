@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "orbn-dev",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
