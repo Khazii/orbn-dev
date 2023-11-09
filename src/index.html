@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.classList.add("theme-dark");
+      }
+    </script>
     <meta charset="utf-8" />
     <title>ORBN</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
-  <body>
-    <app-root></app-root>
+  <body
+    class="bg-white theme-dark:bg-gray-800 text-gray-900 theme-dark:text-white"
+  >
+    <orbn-root></orbn-root>
   </body>
 </html>

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Resetting some default browser styles */
 html,
 body,
 app-root {
@@ -10,17 +9,33 @@ app-root {
   padding: 0;
 }
 
-/* Making sure the html and body elements are full height */
 html,
 body {
   height: 100%;
   width: 100%;
 }
 
-/* Ensuring Angular's root element expands to fill available space */
-app-root {
-  background: #018281;
-  display: block;
-  height: 100%;
-  width: 100%;
+/* Dark theme styles */
+.theme-dark {
+  @apply text-gray-300; /* This sets the text color for all elements within .theme-dark */
+
+  /* If you want to ensure that all possible elements get this text color, you can be explicit */
+  *,
+  *::before,
+  *::after {
+    @apply text-gray-300;
+  }
+
+  /* Set the background color for the dark theme */
+  body {
+    @apply bg-gray-800; /* Dark mode background */
+  }
+}
+
+/* You can also add specific element selectors if needed */
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark p {
+  @apply text-gray-300; /* This applies the text color to all h1, h2, h3, and p tags within .theme-dark */
 }
