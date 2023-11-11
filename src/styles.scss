@@ -15,27 +15,37 @@ body {
   width: 100%;
 }
 
-/* Dark theme styles */
-.theme-dark {
-  @apply text-gray-300; /* This sets the text color for all elements within .theme-dark */
+body {
+  transition: background-color 0.3s ease;
+  overflow-x: hidden;
+}
 
-  /* If you want to ensure that all possible elements get this text color, you can be explicit */
+.theme-dark {
+  @apply text-gray-300;
+
   *,
   *::before,
   *::after {
     @apply text-gray-300;
   }
 
-  /* Set the background color for the dark theme */
   body {
-    @apply bg-gray-800; /* Dark mode background */
+    @apply bg-gray-800;
   }
 }
 
-/* You can also add specific element selectors if needed */
+h1,
+h2,
+h3,
+a,
+p {
+  @apply text-gray-800;
+}
+
 .theme-dark h1,
 .theme-dark h2,
 .theme-dark h3,
+.theme-dark a,
 .theme-dark p {
-  @apply text-gray-300; /* This applies the text color to all h1, h2, h3, and p tags within .theme-dark */
+  @apply text-gray-300;
 }

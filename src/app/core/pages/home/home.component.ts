@@ -1,3 +1,4 @@
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -26,7 +27,7 @@ interface ImagePaths {
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [CommonModule, RandomDivComponent],
+  imports: [CommonModule, DragDropModule, RandomDivComponent],
 })
 export class HomeComponent implements OnInit, OnDestroy {
   divs: DivData[] = [];
@@ -60,6 +61,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       href: 'https://twitter.com/olliebrennan_',
     },
   ];
+
+  isDragging = false;
 
   constructor(private router: Router) {}
 
@@ -134,11 +137,21 @@ export class HomeComponent implements OnInit, OnDestroy {
     return { left: x, top: y };
   }
 
+  onDragStart(event: any, div: any) {
+    this.isDragging = true;
+  }
+
+  onDragEnd(event: any, div: any) {
+    setTimeout(() => (this.isDragging = false), 100);
+  }
+
   imageClick(div: DivData) {
-    if (div.href) {
-      window.open(div.href, '_blank');
-    } else if (div.route) {
-      this.router.navigate([div.route]);
+    if (!this.isDragging) {
+      if (div.href) {
+        window.open(div.href, '_blank');
+      } else if (div.route) {
+        this.router.navigate([div.route]);
+      }
     }
   }
 }

@@ -4,13 +4,15 @@
   [style.top.px]="div.top"
   [style.maxWidth.px]="div.width"
   [style.maxHeight.px]="div.height"
-  [class.hovered]="div.hovered"
+  [class.hovered]="div.hovered && !isDragging"
+  (cdkDragStarted)="onDragStart($event, div)"
+  (cdkDragEnded)="onDragEnd($event, div)"
   class="fixed"
+  cdkDrag
 >
-  <a (click)="imageClick(div)" class="cursor-pointer">
+  <a (click)="imageClick(div)" [title]="div.text" class="cursor-pointer">
     <img
       [src]="div.imageUrl"
-      [title]="div.text"
       [alt]="div.text"
       [style.width.px]="div.width"
       [style.height.px]="div.height"

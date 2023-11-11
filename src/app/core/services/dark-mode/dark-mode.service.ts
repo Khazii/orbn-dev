@@ -1,4 +1,3 @@
-// dark-mode.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -12,13 +11,17 @@ export class DarkModeService {
     this.updateBodyClass();
   }
 
-  toggleDarkMode() {
+  get isDarkMode(): boolean {
+    return this.darkMode;
+  }
+
+  toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
     localStorage.setItem('darkMode', this.darkMode.toString());
     this.updateBodyClass();
   }
 
-  private updateBodyClass() {
+  private updateBodyClass(): void {
     if (this.darkMode) {
       document.documentElement.classList.add('theme-dark');
     } else {

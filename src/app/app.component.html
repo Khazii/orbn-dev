@@ -1,2 +1,24 @@
-<!-- <router-outlet></router-outlet> -->
-<button (click)="toggleDarkMode()">Toggle Dark Mode</button>
+<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+  <nav>
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="flex gap-3">
+        @for (route of routes; track route.path) {
+        <p
+          [routerLink]="route.path"
+          routerLinkActive="bg-gray-900 hover:bg-gray-900 text-white cursor-default"
+          class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium cursor-pointer"
+        >
+          {{ route.label }}
+        </p>
+        }
+      </div>
+      <div class="flex">
+        <button (click)="toggleDarkMode()" class="text-4xl">
+          {{ darkModeService.isDarkMode ? "🌞" : "🌚" }}
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

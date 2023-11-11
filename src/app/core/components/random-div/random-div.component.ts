@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
+  selector: 'app-random-div',
   standalone: true,
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss',
   imports: [CommonModule],
+  templateUrl: './random-div.component.html',
+  styleUrl: './random-div.component.scss',
 })
-export class BlogComponent {}
+export class RandomDivComponent {}
