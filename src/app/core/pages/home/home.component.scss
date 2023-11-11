@@ -1,0 +1,5 @@
+.hovered {
+  z-index: 5;
+  transform: scale(1.1);
+  transition: z-index 0.2s ease, transform 0.2s ease;
+}

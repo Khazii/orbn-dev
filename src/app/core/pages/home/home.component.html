@@ -1,0 +1,22 @@
+@for (div of divs; track div.imageUrl) {
+<app-random-div
+  [style.left.px]="div.left"
+  [style.top.px]="div.top"
+  [style.maxWidth.px]="div.width"
+  [style.maxHeight.px]="div.height"
+  [class.hovered]="div.hovered"
+  class="fixed"
+>
+  <a (click)="imageClick(div)" class="cursor-pointer">
+    <img
+      [src]="div.imageUrl"
+      [title]="div.text"
+      [alt]="div.text"
+      [style.width.px]="div.width"
+      [style.height.px]="div.height"
+      (mouseenter)="div.hovered = true"
+      (mouseleave)="div.hovered = false"
+    />
+  </a>
+</app-random-div>
+}
